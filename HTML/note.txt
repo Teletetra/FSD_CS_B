@@ -1,0 +1,25 @@
+style
+import Url('style.css')
+
+
+dhcp server
+
+alert 
+
+bigint
+
+
+promises---
+const mypromise=new promises(
+    (resolve,reject)=>{
+        console.log("executed promis);
+        resolve("All ser");
+    })
+mypromise.then((msg)=>{
+    console.log(msg);
+}).catch((err)=>console.log("Error:))
+
+
+the fetch of github return promise
+
+asynchronus- callback,promise,asynch/await
