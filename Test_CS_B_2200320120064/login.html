@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #login{
 
-        }
     </style>
 </head>
 <body>
     <div id="login">
         <div>
-            <form action="" method="post">
+            <form action="welcomew.html" method="post" onsubmit="return validate()">
                 <label for="User_id" >User_id</label>
                 <input type="text" name="User_id" id="User_id"><br>
                 <label for="pass">Password</label>
                 <input type="password" name="pass" id="upass"><br>
-                <button type="submit" name="login" id="login" onsubmit="validate()">
+                <input type="submit" name="login" id="login">
                 <input type="reset" name="reset" id="reset">
             </form>
         </div>
