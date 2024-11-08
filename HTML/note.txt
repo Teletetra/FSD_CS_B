@@ -23,3 +23,10 @@ mypromise.then((msg)=>{
 the fetch of github return promise
 
 asynchronus- callback,promise,asynch/await
+
+
+event handler adn event listener
+
+
+// create a registeration form 
+// branch,section list and validate your student registeration form where mobile number should be greater than 10 and it shouldn't less than 10
