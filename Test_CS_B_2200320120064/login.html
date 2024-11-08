@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #login{
+
+        }
+    </style>
 </head>
 <body>
     <div id="login">
@@ -13,13 +18,21 @@
                 <input type="text" name="User_id" id="User_id"><br>
                 <label for="pass">Password</label>
                 <input type="password" name="pass" id="upass"><br>
-                <input type="submit" name="login" id="login">
+                <button type="submit" name="login" id="login" onsubmit="validate()">
                 <input type="reset" name="reset" id="reset">
             </form>
         </div>
     </div>
     <script>
-        
+        function validate(){
+            const user=document.getElementById("User_id").value;
+            const pass=document.getElementById("upass").value;
+            if (user!="admin" && pass!="admin"){
+                alert("enter validated username and pass")
+                return false;
+            }
+            return true;
+        }
     </script>
 </body>
 </html>
