@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="check">
+        <div class="container">
+            <h2>Weather Report</h2>
+            <input type="text" id="cityname" placeholder="Enter city name">
+            <button onclick="getWeather()">Get Weather</button>
+            <div id="weather"></div>
+        </div>
+    
+        <script>
+            async function getWeather() {
+                const city = document.getElementById('cityname').value;
+                const apiKey = '71b26cafb34c90448e62fef748031cfd'; 
+                const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+                try {
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    if (data.cod === 200) {
+                        const weather = `
+                            <h3>${data.name}, ${data.sys.country}</h3>
+                            <p>Date: ${data.dt}</p>
+                            <p>Temperature: ${data.main.temp}°C</p>
+                            <p>Weather: ${data.weather[0].description}</p>
+                            <p>Humidity: ${data.main.humidity}%</p>
+                            <p>Pressure: ${data.main.pressure} mb</p>
+                        `;
+                        document.getElementById('weather').innerHTML = weather;
+                    } else {
+                        document.getElementById('weather').innerHTML = `<p>${data.message}</p>`;
+                    }
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                    document.getElementById('weather').innerHTML = `<p>Error: there might be an error in the API key or the request.</p>`;
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
