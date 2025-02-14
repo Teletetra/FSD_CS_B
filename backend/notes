@@ -1,3 +1,4 @@
 promises- accept ,reject,pending 
 async-
 
+//create a server which display data from a json file
