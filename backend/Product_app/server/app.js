@@ -56,7 +56,7 @@ app.delete("/deleteproduct/:id",(req,res)=>{
     if(index==-1){
         res.status(400).json({status: "fail",message: "product not found"});  
     }
-    else{
+    else{   
         const deldata=products.splice(index,1);
         res.status(200).json({status: "success",message: "product deleted successfully",data:deldata});  
     }
@@ -65,7 +65,7 @@ app.delete("/deleteproduct/:id",(req,res)=>{
 app.listen(port,(err)=>{
 try{
     if(err) throw err;
-    console.log(server is running on port ${port})
+    console.log(`server is running on port ${port}`)
 }
 catch(err){
     console.log("Server Error:".err.message)
